@@ -1,0 +1,262 @@
+:root {
+    --color-black-contrast: rgb(43, 42, 42);
+    --gap-1: 25px;
+    --gap-2: 40px;
+    --gap-3: 20px;
+    --gap-4: 30px;
+}
+
+html {
+    font-size: 16px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url('../fonts/Roboto/Roboto-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url('../fonts/Roboto/Roboto-Medium.ttf');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url('../fonts/Roboto/Roboto-Bold.ttf');
+    font-weight: 700;
+    font-style: normal;
+}
+
+body {
+    background-color: var(--color-black-contrast);
+    font-family: Roboto;
+    font-size: 1.375rem;
+    font-weight: 400;
+    line-height: 1.37;
+}
+
+main {
+    max-width: 525px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section {
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.text {
+        padding: 0 22px;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+img + h1, h2 {
+    margin-top: var(--gap-4);
+}
+
+h1 {
+    font-size: 1.6875rem;
+    font-weight: 700;
+    padding: var(--gap-3) 0;
+}
+
+h2 {
+    font-size: 1.375rem;
+    font-weight: 700;
+    margin: var(--gap-3) 0;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+:not(p + *) p {
+    margin-bottom: var(--gap-4);
+}
+
+h1 + p {
+    margin-top: var(--gap-2);
+}
+
+h2 + p {
+    margin-top: var(--gap-2);
+}
+
+p + h1 {
+    margin-top: var(--gap-2);
+}
+
+p + h2 {
+    margin-top: var(--gap-2);
+}
+
+p + p {
+    margin-top: var(--gap-2);
+} 
+
+p + img {
+    margin-top: var(--gap-4);
+}
+
+/* slider */
+
+.glide {
+    position: relative;
+}
+
+.glide__arrows {
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 10px;
+    position: absolute;
+}
+
+.glide__arrow {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.glide__arrow:hover {
+    transform: scale(1.1);
+}
+
+.glide__arrow svg {
+    width: 20px;
+    height: 20px;
+}
+
+.glide__arrow--right svg{
+    transform: rotate(180deg);
+}
+
+.glide__bullets {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+.glide__bullet {
+    width: 8px;
+    height: 8px;
+    display: block;
+    padding: 0;
+    border-radius: 50%;
+    border: none;
+    opacity: .2;
+    transition: .3s;
+    transform: scale(.9);
+}
+
+.glide__bullet--active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.glide__bullet--active ~ .glide__bullet {
+    transform: scale(.9);
+}
+
+footer {
+    padding-top: var(--gap-4);
+    padding-bottom: calc(var(--gap-4) * 2);
+}
+
+.btn-next {
+    cursor: pointer;
+    display: block;
+    width: fit-content;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #FFD700; /* Цвет фона, аналогичный кнопке */
+    color: black; /* Цвет текста */
+    font-size: 2rem; /* Размер текста */
+    font-weight: 700; /* Полужирный текст */
+    padding: 30px 50px; /* Отступы вокруг текста */
+    border: none; /* Убираем границы */
+    border-radius: 10px; /* Закругляем углы */
+    cursor: pointer; /* Указатель курсора */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Тень */
+    transition: background-color 0.3s ease; /* Плавный переход цвета */
+    text-decoration: none;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}
+
+.btn-next span {
+    transition: .5s;
+    display: block;
+}
+
+.btn-next:hover span{
+    transform: scale(1.05);
+}
+
+@media (max-width:500px){
+    .btn-next {
+        padding: 20px 25px;
+    }
+}
+
+@media (max-width:400px){
+    html {
+        font-size: 14px;
+    }
+
+    :root {
+        --gap-1: 15px;
+        --gap-2: 30px;
+        --gap-3: 10px;
+        --gap-4: 20px;
+    }
+}
+
+@media (max-width:360px){
+    html {
+        font-size: 12px;
+    }
+
+    .text {
+        padding: 0 10px;
+    }
+    
+    :root {
+        --gap-1: 10px;
+        --gap-2: 20px;
+        --gap-3: 10px;
+        --gap-4: 15px
+    }
+
+    .btn-next {
+        font-size: 16px;
+    }
+}
